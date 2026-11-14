@@ -1,0 +1,14 @@
+{
+  "name": "Scotia Immobilien",
+  "rolle": "einer Immobilienagentur für Vermietung in Wien",
+  "fakten": [
+    "Wir vermitteln ausschließlich Mietobjekte (Wohnungen und Häuser) in Wien – keine Käufe oder Verkäufe.",
+    "Büro: Kärntner Straße 10, 1010 Wien. Geöffnet Mo–Fr 9:00–18:00 Uhr, Termine auch nach Vereinbarung.",
+    "Telefon +43 1 234 56 78, E-Mail office@scotia-immobilien.at. Antwort auf Anfragen innerhalb von 24 Stunden.",
+    "Besichtigungen und alle Anfragen laufen über das Kontaktformular der Website.",
+    "Eigentümer, die vermieten möchten: Wir übernehmen Inserat, Besichtigungen und Mieterauswahl.",
+    "Provision: Bei Mietwohnungen zahlt in Österreich seit Juli 2023 meist der Vermieter (Bestellerprinzip). Details klären wir persönlich."
+  ],
+  "objektarten": ["Wohnung", "Haus"],
+  "vermarktung": ["miete"]
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta name="scotia-version" content="mwg9dcg0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Handy: Bereich mit Uhrzeit/Akku in Weiß wie die Kopfzeile + als App auf den Startbildschirm legbar -->
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Scotia">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>Team – Scotia Immobilien Wien</title>
+<meta name="description" content="Lernen Sie das Team von Scotia Immobilien kennen.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a3c5e'/%3E%3Cpath d='M8 16.5 16 9.5l8 7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.5 23v-4.5h5V23' fill='none' stroke='%23c9a24b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=mwg9dcg0">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="index.html" class="logo" aria-label="Scotia Immobilien – Startseite">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 12 6l7.5 6.5" stroke="#fff" stroke-width="1.9"/><path d="M6.8 11v7.5h10.4V11" stroke="#fff" stroke-opacity=".45" stroke-width="1.6"/><path d="M10.2 18.5v-4h3.6v4" stroke="#c9a24b" stroke-width="1.9"/></svg></span>
+      <span class="logo-word">Scotia<small>Immobilien</small></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Mietobjekte</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="team.html" class="active">Team</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div class="nav-right">
+      <a href="kontakt.html" class="btn small">Beratung anfragen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Team</p>
+      <h1 class="split">Die Menschen hinter Scotia</h1>
+      <p class="lead fade">Echte Menschen mit Leidenschaft für Wien und seine Immobilien. Wir sind gerne persönlich für Sie da.</p>
+    </div>
+  </section>
+
+  <section class="section top-tight">
+    <div class="wrap">
+      <div class="team-grid" id="teamGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-cta">
+      <h2 class="fade">Lassen Sie uns über Ihr neues Zuhause sprechen.</h2>
+      <a href="kontakt.html" class="btn light">Termin vereinbaren</a>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="logo light" aria-label="Scotia Immobilien">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 12 6l7.5 6.5" stroke="#fff" stroke-width="1.9"/><path d="M6.8 11v7.5h10.4V11" stroke="#fff" stroke-opacity=".45" stroke-width="1.6"/><path d="M10.2 18.5v-4h3.6v4" stroke="#c9a24b" stroke-width="1.9"/></svg></span>
+          <span class="logo-word">Scotia<small>Immobilien</small></span>
+        </a>
+        <p>Persönliche Vermietung in allen 23 Wiener Bezirken – seit 2010.</p>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <a href="index.html">Mietobjekte</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="team.html">Team</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Kärntner Straße 10<br>1010 Wien</p>
+        <a href="mailto:office@scotia-immobilien.at">office@scotia-immobilien.at</a>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <p>Mo–Fr 9:00–18:00<br>und nach Vereinbarung</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Scotia Immobilien</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="objekte.js?v=mwg9dcg0"></script>
+<script src="script.js?v=mwg9dcg0"></script>
+</body>
+</html>

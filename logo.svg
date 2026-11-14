@@ -1,0 +1,16 @@
+<svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scotia Immobilien">
+  <!-- Emblem -->
+  <g>
+    <!-- rounded badge -->
+    <rect x="4" y="8" width="64" height="64" rx="14" fill="#1a3c5e"/>
+    <rect x="4" y="8" width="64" height="64" rx="14" fill="none" stroke="#c9a24b" stroke-width="2"/>
+    <!-- roof -->
+    <path d="M19 40 L36 25 L53 40" fill="none" stroke="#c9a24b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- stylized S / house body -->
+    <path d="M46 38 q0 -6 -8 -6 q-9 0 -9 7 q0 6 9 7 q9 1 9 7 q0 7 -9 7 q-8 0 -9 -6"
+          fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="80" y="42" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" font-weight="800" fill="#1a3c5e" letter-spacing="1.5">SCOTIA</text>
+  <text x="81" y="62" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#c9a24b" letter-spacing="5.2">IMMOBILIEN</text>
+</svg>

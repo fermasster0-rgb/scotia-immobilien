@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta name="scotia-version" content="mwg9dcg0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Handy: Bereich mit Uhrzeit/Akku in Weiß wie die Kopfzeile + als App auf den Startbildschirm legbar -->
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Scotia">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>Scotia Immobilien – Mietwohnungen und Häuser in Wien</title>
+<meta name="description" content="Mietwohnungen und Häuser zur Miete in Wien – persönlich betreut von Scotia Immobilien.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a3c5e'/%3E%3Cpath d='M8 16.5 16 9.5l8 7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.5 23v-4.5h5V23' fill='none' stroke='%23c9a24b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=mwg9dcg0">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="index.html" class="logo" aria-label="Scotia Immobilien – Startseite">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 12 6l7.5 6.5" stroke="#fff" stroke-width="1.9"/><path d="M6.8 11v7.5h10.4V11" stroke="#fff" stroke-opacity=".45" stroke-width="1.6"/><path d="M10.2 18.5v-4h3.6v4" stroke="#c9a24b" stroke-width="1.9"/></svg></span>
+      <span class="logo-word">Scotia<small>Immobilien</small></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Mietobjekte</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="team.html">Team</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div class="nav-right">
+      <a href="kontakt.html" class="btn small">Beratung anfragen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- SUCHE (wie bei ImmoScout24: zuerst suchen, mittig) -->
+  <section class="search-hero">
+    <div class="wrap">
+      <div class="sh-band">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=80" alt="" fetchpriority="high">
+        <div class="sh-content">
+          <h1>Ihr neues Zuhause in Wien.</h1>
+          <p class="sh-sub"><span id="objCount">9</span> Mietwohnungen und Häuser – persönlich betreut</p>
+
+          <form class="sh-card" id="searchForm" autocomplete="off">
+            <div class="sh-main" data-rotate='["Altbau mit Balkon","Haus mit Garten in Hietzing","3 Zimmer in Neubau","Penthouse mit Terrasse","Familienwohnung in Währing","Loft in der Leopoldstadt"]'>
+              <span data-icon="search" class="sh-search-ic"></span>
+              <div class="input-wrap">
+                <input type="text" id="f-loc" aria-label="Suchbegriff, z. B. Bezirk oder Ausstattung">
+                <div class="ph" aria-hidden="true"></div>
+              </div>
+              <button class="btn" type="submit">Suchen</button>
+            </div>
+            <div class="sh-chips">
+              <button type="button" data-chip="Balkon"><span data-icon="sparkles"></span>Mit Balkon</button>
+              <button type="button" data-chip="Garten"><span data-icon="sparkles"></span>Mit Garten</button>
+              <button type="button" data-chip="Terrasse"><span data-icon="sparkles"></span>Terrasse</button>
+              <button type="button" data-chip="möbliert"><span data-icon="sparkles"></span>Möbliert</button>
+            </div>
+            <!-- nur am Handy: Filter ein-/ausklappen wie in der ImmoScout-App -->
+            <button type="button" class="sh-filter-toggle" id="filterToggle" aria-expanded="false" aria-controls="shFilters">
+              <span data-icon="sliders"></span>Filter<span class="f-badge" id="filterBadge" hidden></span>
+            </button>
+            <div class="sh-filters" id="shFilters">
+              <div class="field">
+                <label for="f-cat">Objektart</label>
+                <select id="f-cat">
+                  <option value="alle">Alle</option>
+                  <option value="Wohnung">Wohnung</option>
+                  <option value="Haus">Haus</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-rooms">Zimmer</label>
+                <select id="f-rooms">
+                  <option value="0">Beliebig</option>
+                  <option value="1">1+ Zimmer</option>
+                  <option value="2">2+ Zimmer</option>
+                  <option value="3">3+ Zimmer</option>
+                  <option value="4">4+ Zimmer</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-max">Miete bis</label>
+                <select id="f-max">
+                  <option value="0">Beliebig</option>
+                  <option value="1000">€ 1.000 / Monat</option>
+                  <option value="1500">€ 1.500 / Monat</option>
+                  <option value="2000">€ 2.000 / Monat</option>
+                  <option value="3000">€ 3.000 / Monat</option>
+                  <option value="5000">€ 5.000 / Monat</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALLE MIETOBJEKTE DIREKT DARUNTER -->
+  <section class="results" id="objekte">
+    <div class="wrap">
+      <div class="list-bar">
+        <div>
+          <h2 class="results-title">Mietobjekte in Wien</h2>
+          <p class="count" id="resultCount"></p>
+        </div>
+        <div class="list-tools">
+          <button type="button" class="reset-link" id="resetFilters" hidden>Filter zurücksetzen</button>
+          <button type="button" class="map-toggle" id="mapOpenBtn"><span data-icon="map"></span>Karte</button>
+          <label class="sort"><span>Sortieren</span>
+            <select id="f-sort">
+              <option value="neu">Neueste zuerst</option>
+              <option value="preis-auf">Miete aufsteigend</option>
+              <option value="preis-ab">Miete absteigend</option>
+              <option value="groesse">Größte zuerst</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <!-- nur am Handy: aktive Filter als Kärtchen zum Wegtippen -->
+      <div class="active-chips" id="activeChips"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- FÜR EIGENTÜMER -->
+  <section class="owner">
+    <div class="wrap">
+      <div class="owner-band">
+        <div>
+          <h2>Sie möchten Ihre Wohnung vermieten?</h2>
+          <p>Wir übernehmen Inserat, Besichtigungen und Mieterauswahl – persönlich und transparent.</p>
+        </div>
+        <a href="kontakt.html" class="btn">Unverbindlich anfragen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="no-cta">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="logo light" aria-label="Scotia Immobilien">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 12 6l7.5 6.5" stroke="#fff" stroke-width="1.9"/><path d="M6.8 11v7.5h10.4V11" stroke="#fff" stroke-opacity=".45" stroke-width="1.6"/><path d="M10.2 18.5v-4h3.6v4" stroke="#c9a24b" stroke-width="1.9"/></svg></span>
+          <span class="logo-word">Scotia<small>Immobilien</small></span>
+        </a>
+        <p>Persönliche Vermietung in allen 23 Wiener Bezirken – seit 2010.</p>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <a href="index.html">Mietobjekte</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="team.html">Team</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Kärntner Straße 10<br>1010 Wien</p>
+        <a href="mailto:office@scotia-immobilien.at">office@scotia-immobilien.at</a>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <p>Mo–Fr 9:00–18:00<br>und nach Vereinbarung</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Scotia Immobilien</span>
+      <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- OBJEKT-FENSTER -->
+<div class="modal-overlay" id="modal" aria-hidden="true">
+  <div class="modal modal-page" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="modal-close" onclick="closeModal()" aria-label="Schließen"><span data-icon="x"></span></button>
+    <!-- nur am Handy: Leiste oben mit Zurück und Teilen -->
+    <div class="mp-bar">
+      <button type="button" onclick="closeModal()" aria-label="Zurück"><span data-icon="back"></span></button>
+      <button type="button" id="m-share" aria-label="Teilen"><span data-icon="share"></span></button>
+    </div>
+    <!-- Oben: kleineres Bild links, das Wichtigste rechts -->
+    <div class="mp-top">
+      <div class="modal-media"><img id="m-img" src="" alt=""></div>
+      <div class="mp-head">
+        <span class="tag" id="m-tag"></span>
+        <div class="location" id="m-loc"></div>
+        <h3 id="m-title"></h3>
+        <div class="price" id="m-price"></div>
+        <div class="modal-specs" id="m-specs"></div>
+        <div class="modal-actions">
+          <a href="kontakt.html" class="btn">Besichtigung anfragen</a>
+          <a href="#" class="portal-link" id="m-portal" target="_blank" rel="noopener" hidden>Auf ImmoScout24 ansehen <span data-icon="arrowUR"></span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Darunter über die ganze Breite: Beschreibung und Eckdaten -->
+    <div class="mp-cols">
+      <section class="mp-section">
+        <h4>Beschreibung</h4>
+        <div class="desc" id="m-desc"></div>
+      </section>
+      <section class="mp-section">
+        <h4>Eckdaten</h4>
+        <dl class="modal-facts" id="m-facts"></dl>
+      </section>
+    </div>
+    <!-- nur am Handy: Kontakt-Leiste, die unten kleben bleibt -->
+    <div class="mp-cta">
+      <a href="tel:+4312345678" class="mp-call"><span data-icon="phone"></span>Anrufen</a>
+      <a href="kontakt.html" class="btn" id="m-ask"><span data-icon="mail"></span>Besichtigung</a>
+    </div>
+  </div>
+</div>
+
+<!-- Schwebender Knopf „Karte“ (wie in der ImmoScout-App) – nur sichtbar, solange man durch die Objekte scrollt -->
+<button type="button" class="map-fab" id="mapFab" aria-label="Objekte auf der Karte anzeigen"><span data-icon="map"></span>Karte</button>
+
+<!-- GROSSE KARTE -->
+<div class="map-view" id="mapView" aria-hidden="true" role="dialog" aria-label="Mietobjekte auf der Karte">
+  <div class="mv-bar">
+    <button type="button" class="mv-close" id="mapClose" aria-label="Zurück zur Liste"><span data-icon="back"></span></button>
+    <div><strong>Mietobjekte in Wien</strong><small id="mapCount"></small></div>
+  </div>
+  <div id="mapCanvas"></div>
+  <div class="map-sheet" id="mapSheet"></div>
+  <button type="button" class="mv-list" id="mapToList"><span data-icon="list"></span>Liste</button>
+  <button type="button" class="mv-locate" id="mapLocate" aria-label="Mein Standort"><span data-icon="locate"></span></button>
+</div>
+
+<script src="objekte.js?v=mwg9dcg0"></script>
+<script src="script.js?v=mwg9dcg0"></script>
+<script src="karte.js?v=mwg9dcg0"></script>
+</body>
+</html>
